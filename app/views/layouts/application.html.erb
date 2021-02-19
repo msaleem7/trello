@@ -12,11 +12,11 @@
 
   <body>
   <br/>
-  <%= link_to "Homepage", :root %>
+<h1><%= link_to "Trello App", root_path %></h1>
 
   <% if signed_in? %>
-    &nbsp;&nbsp;|&nbsp;&nbsp;<%= link_to :Account, @user %>
-    &nbsp;&nbsp;|&nbsp;&nbsp;<%= link_to "Logout", destroy_user_session_path, method: :delete%>
+    &nbsp;&nbsp;<%= link_to :Account, @user %>
+    &nbsp;|&nbsp;&nbsp;<%= link_to "Logout", destroy_user_session_path, method: :delete%>
   <% end %>
   
     <%= yield %>

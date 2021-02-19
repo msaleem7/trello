@@ -1,0 +1,26 @@
+<h1>&nbsp;&nbsp;&nbsp;<%= @user.name.capitalize() + "'s" %> Tasks</h1>
+<h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Description&nbsp;&nbsp;|&nbsp;&nbsp;Completed&nbsp;&nbsp;|&nbsp;&nbsp;Action</h4>
+<ul>
+<% @user.tasks.each do |task| %>
+    <li>
+        <p><%= task.description %>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <%if task.completed %>
+            ✔
+        <% else %>
+            ✖           
+        <% end %>&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <%= link_to "Edit", edit_task_path(task)%>&nbsp;|
+        <%= link_to "Delete", task,
+         method: :delete,
+         data: {confirm: "Are you sure?"}
+         %>
+        </p>
+    </li>
+<% end %>
+</ul>
+<br/>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to "Add task", new_user_task_path(@user) %>
+
+

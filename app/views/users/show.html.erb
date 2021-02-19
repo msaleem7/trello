@@ -1,0 +1,27 @@
+<h1>Account Information</h1>
+
+
+
+<div>
+<p>
+name: <%= @user.name %>
+</p>
+
+<p>
+age: <%= @user.age %>
+</p>
+
+<p>
+email: <%= @user.email %>
+
+</p><br/>
+
+<div>
+<%= link_to "Edit", :edit_user %>&nbsp;&nbsp;|&nbsp;&nbsp;<%= link_to "Delete", :user, method: :delete,
+                  data: { confirm: "Are you sure?" } %>
+
+</div>
+
+
+</div>
+

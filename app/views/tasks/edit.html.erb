@@ -1,25 +1,6 @@
 <h2>Edit Task</h2>
 
-<%= form_with model: @task do |f| %>
-
-<div>
-<%= f.label :description %><br />
-<%= f.text_field :description %>
-</div><br/>
-
-
-<div>
-<%= f.label :completed %>
-<%= f.check_box :completed %>
-</div>
-
-<br/>
-<br/>
-
-<div>
-<%= f.submit "Update" %>
-</div>
-<% end %>
+<%= render 'form' %>
 
 
 

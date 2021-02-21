@@ -1,0 +1,31 @@
+<%= form_with model: 
+    if @task.persisted?
+        @task
+        else
+        [@user, @task]
+    end  do |f| %>
+
+<div>
+<%= f.label :description %><br />
+<%= f.text_field :description %>
+</div><br/>
+
+
+<div>
+<%= f.label :completed %>
+<%= f.check_box :completed %>
+</div>
+
+<br/>
+<br/>
+
+<div>
+<%= if @task.persisted?
+    f.submit "Update"
+else
+    f.submit "Add"
+end  %>
+
+</div>
+<% end %>
+
